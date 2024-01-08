@@ -71,10 +71,11 @@ public class AccountServiceImpl implements AccountService
         throw new AccountNotFoundException("Account not found");
         
         }catch(AccountNotFoundException e) {
-        	throw e;
+        	//throw e;
     }catch(Exception e) {
     	return "An error occurred while depositing the amount";
     }
+		return "Account not found with account number "+accountNumber;
     }
 
     // Method to withdraw from an account
@@ -92,9 +93,10 @@ public class AccountServiceImpl implements AccountService
  throw new AccountNotFoundException("Account not found");
         
         }catch(AccountNotFoundException e) {
-        	throw e;
+        	//throw e;
         }catch(Exception e) {
     	throw new AccountOperationException("Error occured during withdrawal");
     }
+		return "Account Not Found with account number "+accountNumber;
 }
 }
